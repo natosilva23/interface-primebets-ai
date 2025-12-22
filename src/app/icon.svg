@@ -1,0 +1,29 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0B1F3A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1A2942;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00E5FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6A5CFF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="512" height="512" rx="80" fill="url(#bgGradient)"/>
+  
+  <!-- Lightning bolt icon (Zap) - centered and larger -->
+  <g transform="translate(256, 256)">
+    <path d="M-60,-120 L40,-20 L-20,-20 L60,120 L-40,20 L20,20 Z" 
+          fill="url(#iconGradient)" 
+          stroke="#00E5FF" 
+          stroke-width="8"
+          stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Glow effect -->
+  <circle cx="256" cy="256" r="140" fill="none" stroke="#00E5FF" stroke-width="2" opacity="0.3"/>
+  <circle cx="256" cy="256" r="160" fill="none" stroke="#6A5CFF" stroke-width="1" opacity="0.2"/>
+</svg>
