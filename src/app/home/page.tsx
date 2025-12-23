@@ -300,16 +300,9 @@ function HomePageContent() {
   )
 }
 
-export default function HomePage() {
+export default function Page() {
   return (
-    <Suspense fallback={
-      <div className="min-h-screen bg-gradient-to-br from-[#0A0E1A] via-[#0B1F3A] to-[#1A2942] flex items-center justify-center">
-        <div className="text-white text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#00E5FF] mx-auto mb-4"></div>
-          <p>Carregando...</p>
-        </div>
-      </div>
-    }>
+    <Suspense fallback={null}>
       <HomePageContent />
     </Suspense>
   )
