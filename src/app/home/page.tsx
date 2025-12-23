@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { Home as HomeIcon, BarChart3, Building2, User, Zap, Target, Crown, ChevronRight, Bell, Sparkles, AlertCircle } from 'lucide-react'
@@ -10,7 +10,7 @@ import { alertSystem, generateDailyAlertSummary } from '@/lib/ai/alerts'
 import { BettorStyle } from '@/lib/types'
 import PWAInstallBanner from '@/components/custom/pwa-install-banner'
 
-export default function HomePage() {
+function HomePageContent() {
   const [userProfile, setUserProfile] = useState('')
   const [userStyle, setUserStyle] = useState<BettorStyle>('balanced')
   const [dailyAdvice, setDailyAdvice] = useState<any>(null)
@@ -297,5 +297,20 @@ export default function HomePage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function HomePage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-[#0A0E1A] via-[#0B1F3A] to-[#1A2942] flex items-center justify-center">
+        <div className="text-white text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#00E5FF] mx-auto mb-4"></div>
+          <p>Carregando...</p>
+        </div>
+      </div>
+    }>
+      <HomePageContent />
+    </Suspense>
   )
 }
